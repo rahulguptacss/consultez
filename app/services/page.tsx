@@ -12,8 +12,8 @@ export default function ServicesPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans">
       <Header data={common.Header} />
       <main className="w-full flex-1">
-        <Breadcrumb title={pages.services.title} breadcrumb={[{ label: 'Home', href: '/' }, { label: pages.services.pageName }]} />
-        <Services data={sections.services} />
+        <Breadcrumb data={pages.services.breadcrumb!} />
+        <Services data={sections.services} paginate />
       </main>
       <Footer data={common.Footer} />
       <BackToTop />

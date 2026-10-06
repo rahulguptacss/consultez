@@ -1,32 +1,35 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { BlogsProps } from '../../types';
 import Reveal from '../../ui/Reveal';
 
-export default function Blogs({ data, showButton = true }: BlogsProps) {
+export default function Blogs({ data, showButton = true, paginate = false, limit }: BlogsProps) {
+  const pageSize = 6;
+  const [page, setPage] = useState(0);
+  const source = limit ? data.items.slice(0, limit) : data.items;
+  const pageCount = paginate ? Math.ceil(source.length / pageSize) : 1;
+  const visible = paginate ? source.slice(page * pageSize, page * pageSize + pageSize) : source;
+  const shift = (dir: number) => setPage((value) => Math.min(Math.max(value + dir, 0), pageCount - 1));
   return (
     <section className="relative overflow-hidden bg-[#f4efe8] px-3 py-12 sm:px-4 sm:py-14">
       <div className="pointer-events-none absolute -top-16 -right-20 h-64 w-64 rounded-full border border-[#efe4d8]" />
       <Reveal className="mx-auto max-w-[1240px]">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <div className="flex items-center">
-              <span className="h-[2px] w-7 rounded-full bg-[#c6a36b]" />
-              <span className="rounded-full border border-[#c6a36b] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] text-[#411516] uppercase">
-                {data.subtitle}
-              </span>
-              <span className="h-[2px] w-14 rounded-full bg-[#c6a36b]" />
-            </div>
-            <h2 className="mt-4 text-[28px] leading-[1.12] font-extrabold tracking-[-0.02em] text-[#411516] sm:text-[42px]" style={{ fontWeight: 800 }}>
-              {data.title_line1} <span className="block text-[#c4a15a] sm:inline">{data.title_highlight}</span>
-            </h2>
-            <p className="mt-3 max-w-[560px] text-[15px] leading-7 text-[#6d6560]">{data.description}</p>
-          </div>
+        <div className="flex items-center">
+          <span className="h-[2px] w-7 rounded-full bg-[#c6a36b]" />
+          <span className="rounded-full border border-[#c6a36b] px-4 py-1.5 text-[12px] font-semibold tracking-[0.18em] text-[#411516] uppercase">{data.subtitle}</span>
+          <span className="h-[2px] w-14 rounded-full bg-[#c6a36b]" />
+        </div>
+        <div className="mt-5 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <h2 className="shrink-0 text-[30px] leading-[1.12] font-extrabold tracking-[-0.02em] text-[#411516] sm:text-[42px] lg:whitespace-nowrap lg:text-[46px]" style={{ fontWeight: 800 }}>
+            {data.title_line1} <span className="text-[#c4a15a]">{data.title_highlight}</span>
+          </h2>
+          <p className="max-w-[420px] text-[15px] leading-7 text-[#6d6560] lg:mx-4">{data.description}</p>
           {showButton && (
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="w-fit">
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }} className="w-fit shrink-0">
               <Link href={data.button.href} className="inline-flex items-center gap-2 rounded-full bg-[#411516] px-6 py-3 text-[15px] font-medium text-white">
                 {data.button.text}
                 <ArrowRight size={16} />
@@ -36,7 +39,7 @@ export default function Blogs({ data, showButton = true }: BlogsProps) {
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-          {data.items.map((item, index) => (
+          {visible.map((item, index) => (
             <Reveal key={item.href} delay={index * 0.1}>
               <motion.article whileHover={{ y: -8 }} transition={{ type: 'spring', stiffness: 320, damping: 22 }} className="overflow-hidden rounded-[24px] bg-white pb-5 shadow-[0_10px_30px_rgba(65,21,22,0.05)]">
                 <div className="relative">
@@ -50,14 +53,16 @@ export default function Blogs({ data, showButton = true }: BlogsProps) {
                   </span>
                 </div>
                 <div className="px-5 pt-4">
-                  <h3 className="text-[20px] leading-snug font-bold text-[#411516]">{item.title}</h3>
+                  <h3 className="text-[20px] leading-snug font-bold text-[#411516]">
+                    <Link href={item.href} className="hover:text-[#c4a15a]">{item.title}</Link>
+                  </h3>
                   <p className="mt-2 line-clamp-2 text-[14px] leading-6 text-[#8a817b]">{item.excerpt}</p>
                   <div className="mt-4 flex items-center justify-between">
                     <Link href={item.href} className="inline-flex items-center gap-2 text-[15px] font-semibold text-[#411516]">
-                      Read More
+                      {data.read_more}
                       <ArrowRight size={15} />
                     </Link>
-                    <Link href={item.href} aria-label="Read more" className="grid h-10 w-10 place-items-center rounded-full bg-[#411516] text-white">
+                    <Link href={item.href} aria-label={data.read_more} className="grid h-10 w-10 place-items-center rounded-full bg-[#411516] text-white">
                       <ArrowRight size={16} />
                     </Link>
                   </div>
@@ -66,6 +71,21 @@ export default function Blogs({ data, showButton = true }: BlogsProps) {
             </Reveal>
           ))}
         </div>
+        {paginate && pageCount > 1 && (
+          <div className="mt-8 flex items-center justify-center gap-2">
+            <button type="button" aria-label="Previous" onClick={() => shift(-1)} disabled={page === 0} className="grid h-10 w-10 place-items-center rounded-full border border-[#411516] text-[#411516] disabled:opacity-40">
+              <ArrowLeft size={16} />
+            </button>
+            {Array.from({ length: pageCount }, (_, index) => (
+              <button key={index} type="button" onClick={() => setPage(index)} className={`grid h-10 w-10 place-items-center rounded-full text-[15px] font-semibold ${page === index ? 'bg-[#411516] text-white' : 'border border-[#411516]/30 text-[#411516]'}`}>
+                {index + 1}
+              </button>
+            ))}
+            <button type="button" aria-label="Next" onClick={() => shift(1)} disabled={page === pageCount - 1} className="grid h-10 w-10 place-items-center rounded-full border border-[#411516] text-[#411516] disabled:opacity-40">
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        )}
       </Reveal>
     </section>
   );

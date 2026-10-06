@@ -25,11 +25,8 @@ export default async function ServiceDetailsPage({ params }: { params: Promise<{
     <div className="flex min-h-screen flex-col bg-white font-sans">
       <Header data={common.Header} />
       <main className="w-full flex-1">
-        <Breadcrumb
-          title={details.title}
-          breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: details.title }]}
-        />
-        <ServiceDetails data={details} allServices={sections.services.items} />
+        <Breadcrumb data={{ ...pages.service_details.breadcrumb!, title: details.title }} />
+        <ServiceDetails data={details} allServices={sections.services.items} sidebar={sections.service_sidebar} />
       </main>
       <Footer data={common.Footer} />
       <BackToTop />

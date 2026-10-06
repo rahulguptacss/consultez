@@ -12,8 +12,8 @@ export default function BlogPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans">
       <Header data={common.Header} />
       <main className="w-full flex-1">
-        <Breadcrumb title={pages.blog.title} breadcrumb={[{ label: 'Home', href: '/' }, { label: pages.blog.pageName }]} />
-        <Blogs data={sections.blogs} showButton={false} />
+        <Breadcrumb data={pages.blog.breadcrumb!} />
+        <Blogs data={sections.blogs} showButton={false} paginate />
       </main>
       <Footer data={common.Footer} />
       <BackToTop />

@@ -7,8 +7,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { HeaderProps } from '../../types';
 
-export function Brand({ className = 'h-[84px]' }: { className?: string }) {
-  return <img src="/logo/whitelogo.png" alt="FinTrust" className={`${className} w-auto object-contain`} />;
+export function Brand({ src, alt, className = 'h-[84px]' }: { src: string; alt: string; className?: string }) {
+  return <img src={src} alt={alt} className={`${className} w-auto object-contain`} />;
 }
 
 export default function Header({ data }: HeaderProps) {
@@ -23,7 +23,7 @@ export default function Header({ data }: HeaderProps) {
       <div className="mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-4 px-4 lg:h-[108px] lg:gap-6 lg:px-4">
         <motion.div initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.45 }}>
           <Link href="/" aria-label={data.logo_text} className="shrink-0">
-            <Brand className="h-14 lg:h-[84px]" />
+            <Brand src={data.logo} alt={data.logo_text} className="h-14 lg:h-[84px]" />
           </Link>
         </motion.div>
 
@@ -97,7 +97,6 @@ export default function Header({ data }: HeaderProps) {
                   </Link>
                 </motion.div>
               ))}
-              <a href={tel} className="text-[15px] text-[#f3d48a]">{data.phone}</a>
             </div>
           </motion.div>
         )}

@@ -107,15 +107,15 @@ export default function Team({ data }: TeamProps) {
                     <p className="mt-1 text-[14px] text-[#9a908a]">{member.role}</p>
                     <span className="mt-3 block h-[2px] w-8 rounded-full bg-[#c6a36b]" />
                     <div className="mt-3 flex gap-2 text-[#411516]">
-                      <span className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30 text-[13px] font-bold">in</span>
-                      <span className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30 text-[14px] font-bold">X</span>
-                      <span className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30">
+                      <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30 text-[13px] font-bold">in</a>
+                      <a href="https://x.com" target="_blank" rel="noreferrer" aria-label="X" className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30 text-[14px] font-bold">X</a>
+                      <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="grid h-9 w-9 place-items-center rounded-full border border-[#411516]/30">
                         <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
                           <rect x="3" y="3" width="18" height="18" rx="5" />
                           <circle cx="12" cy="12" r="4" />
                           <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
                         </svg>
-                      </span>
+                      </a>
                     </div>
                   </div>
                 </div>

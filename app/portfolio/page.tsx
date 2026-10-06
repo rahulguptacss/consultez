@@ -12,7 +12,7 @@ export default function PortfolioPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans">
       <Header data={common.Header} />
       <main className="w-full flex-1">
-        <Breadcrumb title={pages.portfolio.title} breadcrumb={[{ label: 'Home', href: '/' }, { label: pages.portfolio.pageName }]} />
+        <Breadcrumb data={pages.portfolio.breadcrumb!} />
         <Portfolio data={sections.portfolio} />
       </main>
       <Footer data={common.Footer} />

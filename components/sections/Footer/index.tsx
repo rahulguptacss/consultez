@@ -50,7 +50,7 @@ export default function Footer({ data }: { data: FooterData }) {
     <footer className="bg-[#411516] text-white">
       <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-4 py-8 lg:flex-row lg:items-start lg:justify-between lg:gap-10 lg:py-12">
         <Reveal className="mb-4 w-full shrink-0 lg:mb-0 lg:max-w-[230px]">
-          <Brand />
+          <Brand src={data.logo} alt={data.logo_text} />
           <p className="mt-4 text-[14px] leading-6 text-white/80">{data.description}</p>
           <div className="mt-5 flex gap-2.5 text-white">
             {[
@@ -58,10 +58,10 @@ export default function Footer({ data }: { data: FooterData }) {
               <g key="ig"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="currentColor" strokeWidth="1.6" /><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" strokeWidth="1.6" /><circle cx="16.6" cy="7.4" r="0.9" fill="currentColor" /></g>,
               <path key="in" d="M7 9H4.5v10H7V9zM5.7 4.5A1.5 1.5 0 1 0 5.7 7.5 1.5 1.5 0 0 0 5.7 4.5zM19.5 19h-2.5v-5.2c0-1.5-.6-2.3-1.7-2.3-1.2 0-1.8.8-1.8 2.3V19H11V9h2.4v1.3c.5-.8 1.5-1.6 3.1-1.6 2.2 0 3 1.4 3 4.1V19z" />,
               <path key="yt" d="M20 8.2a2.4 2.4 0 0 0-1.7-1.7C16.8 6 12 6 12 6s-4.8 0-6.3.5A2.4 2.4 0 0 0 4 8.2 25 25 0 0 0 3.5 12 25 25 0 0 0 4 15.8a2.4 2.4 0 0 0 1.7 1.7C7.2 18 12 18 12 18s4.8 0 6.3-.5a2.4 2.4 0 0 0 1.7-1.7A25 25 0 0 0 20.5 12 25 25 0 0 0 20 8.2zM10.5 14.8V9.2L15.2 12l-4.7 2.8z" />,
-            ].map((icon) => (
-              <motion.span key={icon.key} whileHover={{ y: -3, scale: 1.08 }} className="grid h-9 w-9 place-items-center rounded-full border border-white/70">
+            ].map((icon, index) => (
+              <motion.a key={data.socials[index].name} href={data.socials[index].href} target="_blank" rel="noreferrer" aria-label={data.socials[index].name} whileHover={{ y: -3, scale: 1.08 }} className="grid h-9 w-9 place-items-center rounded-full border border-white/70">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">{icon}</svg>
-              </motion.span>
+              </motion.a>
             ))}
           </div>
         </Reveal>

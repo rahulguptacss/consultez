@@ -19,11 +19,11 @@ export default function Home() {
       <main className="w-full flex-1">
         <Hero data={sections.hero} />
         <About data={sections.about} />
-        <Services data={sections.services} limit={3} />
+        <Services data={sections.services} limit={3} showButton />
         <Team data={sections.team} />
         <Faq data={sections.faq} />
         <Testimonials data={sections.testimonials} />
-        <Blogs data={sections.blogs} />
+        <Blogs data={sections.blogs} limit={3} />
       </main>
       <Footer data={common.Footer} />
       <BackToTop />

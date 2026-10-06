@@ -1,15 +1,20 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Megaphone, TrendingUp, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Megaphone, TrendingUp, Users } from 'lucide-react';
 import { ServicesProps } from '../../types';
 import Reveal from '../../ui/Reveal';
 
 const icons = { TrendingUp, Megaphone, Users };
 
-export default function Services({ data, limit }: ServicesProps) {
+export default function Services({ data, limit, showButton = false, paginate = false }: ServicesProps) {
   const items = limit ? data.items.slice(0, limit) : data.items;
+  const pageSize = 6;
+  const [page, setPage] = useState(0);
+  const pageCount = paginate ? Math.ceil(items.length / pageSize) : 1;
+  const visible = paginate ? items.slice(page * pageSize, page * pageSize + pageSize) : items;
 
   return (
     <section className="relative overflow-hidden bg-[#f7f3ee] px-3 py-12 sm:px-4 sm:py-14">
@@ -28,16 +33,18 @@ export default function Services({ data, limit }: ServicesProps) {
             <span className="block text-[#c4a15a]">{data.title_highlight}</span>
           </h2>
           <p className="max-w-[420px] text-[15px] leading-7 font-normal text-[#6d6560] lg:mx-4">{data.description}</p>
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-            <Link href={data.button.href} className="inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-[#411516] px-8 py-3.5 text-[16px] font-medium text-white">
-              {data.button.text}
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
+          {showButton && (
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+              <Link href={data.button.href} className="inline-flex w-fit shrink-0 items-center gap-3 rounded-full bg-[#411516] px-8 py-3.5 text-[16px] font-medium text-white">
+                {data.button.text}
+                <ArrowRight size={18} />
+              </Link>
+            </motion.div>
+          )}
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {items.map((item, index) => {
+          {visible.map((item, index) => {
             const Icon = icons[item.icon as keyof typeof icons] ?? TrendingUp;
             return (
               <Reveal key={item.title} delay={index * 0.1}>
@@ -49,7 +56,9 @@ export default function Services({ data, limit }: ServicesProps) {
                     </span>
                   </div>
                   <div className="px-5 pt-9">
-                    <h3 className="text-[26px] font-extrabold text-[#411516]" style={{ fontWeight: 800 }}>{item.title}</h3>
+                    <h3 className="text-[26px] font-extrabold text-[#411516]" style={{ fontWeight: 800 }}>
+                      <Link href={item.link} className="hover:text-[#c4a15a]">{item.title}</Link>
+                    </h3>
                     <p className="mt-1.5 text-[15px] leading-6 text-[#8b827c]">{item.description}</p>
                     <Link href={item.link} className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#f6eee8] px-6 py-2.5 text-[15px] font-medium text-[#411516]">
                       Learn More
@@ -61,6 +70,26 @@ export default function Services({ data, limit }: ServicesProps) {
             );
           })}
         </div>
+        {paginate && pageCount > 1 && (
+          <div className="mt-10 flex items-center justify-center gap-2">
+            <button type="button" aria-label="Previous" onClick={() => setPage((value) => Math.max(value - 1, 0))} disabled={page === 0} className="grid h-10 w-10 place-items-center rounded-full border border-[#411516] text-[#411516] disabled:opacity-40">
+              <ArrowLeft size={16} />
+            </button>
+            {Array.from({ length: pageCount }, (_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setPage(index)}
+                className={`grid h-10 w-10 place-items-center rounded-full text-[15px] font-semibold ${page === index ? 'bg-[#411516] text-white' : 'border border-[#411516] text-[#411516]'}`}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button type="button" aria-label="Next" onClick={() => setPage((value) => Math.min(value + 1, pageCount - 1))} disabled={page === pageCount - 1} className="grid h-10 w-10 place-items-center rounded-full border border-[#411516] text-[#411516] disabled:opacity-40">
+              <ArrowRight size={16} />
+            </button>
+          </div>
+        )}
       </Reveal>
     </section>
   );

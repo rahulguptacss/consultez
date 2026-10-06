@@ -12,7 +12,7 @@ export default function ContactPage() {
     <div className="flex min-h-screen flex-col bg-white font-sans">
       <Header data={common.Header} />
       <main className="w-full flex-1">
-        <Breadcrumb title={pages.contact.title} breadcrumb={[{ label: 'Home', href: '/' }, { label: pages.contact.pageName }]} />
+        <Breadcrumb data={pages.contact.breadcrumb!} />
         <Contact data={sections.contact} />
       </main>
       <Footer data={common.Footer} />
