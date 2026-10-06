@@ -1,0 +1,458 @@
+{
+  "common": {
+    "Header": {
+      "logo_text": "FinTrust",
+      "links": [
+        { "name": "Home", "href": "/", "active": true },
+        { "name": "About", "href": "/about" },
+        { "name": "Services", "href": "/services" },
+        { "name": "Portfolio", "href": "/portfolio" },
+        { "name": "Blog", "href": "/blog" },
+        { "name": "Contact", "href": "/contact" }
+      ],
+      "phone": "+91 98765 43210",
+      "button_text": "Call Now",
+      "button_link": "tel:+919876543210"
+    },
+    "Footer": {
+      "logo_text": "FinTrust",
+      "description": "Your Trusted Partner for Smarter Financial Planning and a Brighter Tomorrow.",
+      "quick_links": [
+        { "name": "Home", "href": "/" },
+        { "name": "About Us", "href": "/about" },
+        { "name": "Services", "href": "/services" },
+        { "name": "Case Study", "href": "/portfolio" },
+        { "name": "Blog", "href": "/blog" },
+        { "name": "Contact Us", "href": "/contact" }
+      ],
+      "our_services": [
+        { "name": "Financial Planning", "href": "/services/business-planning" },
+        { "name": "Investment Advisory", "href": "/services/financial-advisory" },
+        { "name": "Wealth Management", "href": "/services/sales-consulting" },
+        { "name": "Retirement Planning", "href": "/services/business-planning" },
+        { "name": "Tax Planning", "href": "/services/financial-advisory" },
+        { "name": "Business Consulting", "href": "/services/marketing-branding" }
+      ],
+      "company": [
+        { "name": "About Us", "href": "/about" },
+        { "name": "Our Team", "href": "/about" },
+        { "name": "Careers", "href": "/contact" },
+        { "name": "Testimonials", "href": "/#testimonials" },
+        { "name": "FAQs", "href": "/#faq" },
+        { "name": "Latest News", "href": "/blog" }
+      ],
+      "contact": {
+        "address": "123, MG Road, Connaught Place New Delhi, 110001, India",
+        "email": "support@fintrust.com",
+        "phone": "+91 98765 43210"
+      },
+      "headings": {
+        "quick_links": "Quick Links",
+        "our_services": "Our Services",
+        "company": "Company",
+        "contact": "Get In Touch"
+      },
+      "contact_labels": {
+        "address": "Address",
+        "email": "Email Us",
+        "phone": "Call Us"
+      },
+      "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow"
+    }
+  },
+  "categories": {
+    "Finance": {
+      "templateComponents": {
+        "template-1": {
+          "pages": {
+            "home": {
+              "title": "Home",
+              "pageName": "Home",
+              "metadata": { "title": "FinTrust - Build a Brighter Financial Future" },
+              "components": [
+                { "key": "HeroSection", "component": "Hero" },
+                { "key": "AboutSection", "component": "About" },
+                { "key": "ServicesSection", "component": "Services" },
+                { "key": "TeamSection", "component": "Team" },
+                { "key": "FaqSection", "component": "Faq" },
+                { "key": "TestimonialsSection", "component": "Testimonials" },
+                { "key": "BlogsSection", "component": "Blogs" }
+              ]
+            },
+            "about": {
+              "title": "About Us",
+              "pageName": "About Us",
+              "metadata": { "title": "About Us - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "AboutSection", "component": "About" },
+                { "key": "TeamSection", "component": "Team" },
+                { "key": "TestimonialsSection", "component": "Testimonials" }
+              ]
+            },
+            "services": {
+              "title": "Our Services",
+              "pageName": "Services",
+              "metadata": { "title": "Services - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "ServicesSection", "component": "Services" }
+              ]
+            },
+            "service_details": {
+              "title": "Service Details",
+              "pageName": "Service Details",
+              "metadata": { "title": "Service Details - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "ServiceDetailsSection", "component": "ServiceDetails" }
+              ]
+            },
+            "portfolio": {
+              "title": "Portfolio",
+              "pageName": "Portfolio",
+              "metadata": { "title": "Portfolio - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "PortfolioSection", "component": "Portfolio" }
+              ]
+            },
+            "blog": {
+              "title": "News & Blogs",
+              "pageName": "Blog",
+              "metadata": { "title": "Blog - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "BlogsSection", "component": "Blogs" }
+              ]
+            },
+            "blog_details": {
+              "title": "Blog Details",
+              "pageName": "Blog Details",
+              "metadata": { "title": "Blog - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "BlogDetailsSection", "component": "BlogDetails" }
+              ]
+            },
+            "contact": {
+              "title": "Contact Us",
+              "pageName": "Contact",
+              "metadata": { "title": "Contact - FinTrust" },
+              "components": [
+                { "key": "BreadcrumbSection", "component": "Breadcrumb" },
+                { "key": "ContactSection", "component": "Contact" }
+              ]
+            },
+            "thank_you": {
+              "title": "Thank You",
+              "pageName": "Thank You",
+              "metadata": { "title": "Thank You - FinTrust" },
+              "components": [
+                { "key": "ThankYouSection", "component": "ThankYou" }
+              ]
+            }
+          },
+          "sections": {
+            "hero": {
+              "eyebrow": "Your Goals Our Guidance",
+              "title_line1": "Build a",
+              "title_highlight": "Brighter",
+              "title_line2": "Financial Future",
+              "description": "Smart strategies, expert advice, and personalized solutions to help you achieve your financial goals with confidence.",
+              "button": { "text": "Contact Us", "href": "/contact" },
+              "image": "/banner/herobanner.png"
+            },
+            "about": {
+              "subtitle": "About Us",
+              "title_line1": "The Journey Behind Our",
+              "title_highlight": "Business Success",
+              "description": "We are committed to helping individuals and businesses achieve their financial goals through expert guidance, tailored strategies, and unwavering support.",
+              "image": "/img/boys.png",
+              "image_secondary": "/img/girl.png",
+              "cards": [
+                {
+                  "title": "Strategic Financial Planning",
+                  "description": "We create personalized strategies to help you grow, protect, and manage your wealth for a secure future.",
+                  "icon": "TrendingUp"
+                },
+                {
+                  "title": "Trusted Expert Support",
+                  "description": "Our experienced team provides reliable advice and continuous support at every step of your financial journey.",
+                  "icon": "Handshake"
+                }
+              ],
+              "stats": [
+                { "value": "27+", "label": "Years of Experience" },
+                { "value": "500+", "label": "Clients Trust Us" },
+                { "value": "95%", "label": "Client Satisfaction" }
+              ]
+            },
+            "services": {
+              "subtitle": "Services",
+              "title_line1": "Empower Your Business",
+              "title_highlight": "To Succeed & Grow.",
+              "description": "We provide expert consultancy services designed to help businesses grow, optimize operations, and achieve long-term success. Our tailored solutions ensure real results.",
+              "button": { "text": "More Services", "href": "/services" },
+              "items": [
+                {
+                  "title": "Business Planning",
+                  "description": "We help you create clear, strategic business plans to drive growth, improve efficiency, and achieve long-term success.",
+                  "image": "/services/1.png",
+                  "link": "/services/business-planning",
+                  "icon": "TrendingUp"
+                },
+                {
+                  "title": "Marketing & Branding",
+                  "description": "We develop result-driven marketing strategies to strengthen your brand presence and connect you with the right audience.",
+                  "image": "/services/2.png",
+                  "link": "/services/marketing-branding",
+                  "icon": "Megaphone"
+                },
+                {
+                  "title": "Sales Consulting",
+                  "description": "We provide expert sales consulting to improve your sales process, boost team performance, and maximize revenue.",
+                  "image": "/services/3.png",
+                  "link": "/services/sales-consulting",
+                  "icon": "Users"
+                },
+                {
+                  "title": "Financial Advisory",
+                  "description": "Guidance on cash, investments, and the numbers behind every big decision.",
+                  "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+                  "link": "/services/financial-advisory",
+                  "icon": "LineChart"
+                }
+              ]
+            },
+            "team": {
+              "subtitle": "Top Consultant",
+              "title_line1": "Enhance Your Experience With",
+              "title_mobile_line1": "Enhance Your Experience",
+              "title_mobile_prefix": "With",
+              "title_highlight": "Expert Consulting",
+              "description": "Our experienced consultants are here to guide you with the right strategies, practical solutions, and personalized support to help your business grow.",
+              "button": { "text": "View All Team", "href": "/about" },
+              "members": [
+                { "name": "Priya Sharma", "role": "Business Consultant", "image": "/team/2.png" },
+                { "name": "Rahul Mehta", "role": "Strategy Consultant", "image": "/team/3.png" },
+                { "name": "Ananya Iyer", "role": "Marketing Consultant", "image": "/team/5.png" },
+                { "name": "Amit Verma", "role": "IT Consultant", "image": "/team/6.png" },
+                { "name": "Arjun Singh", "role": "Financial Advisor", "image": "/team/1.png" },
+                { "name": "Vikram Patel", "role": "Sales Consultant", "image": "/team/4.png" }
+              ]
+            },
+            "faq": {
+              "subtitle": "Faq's",
+              "title_line1": "Frequently",
+              "title_highlight": "Ask Questions",
+              "description": "Find quick answers to common questions about our consulting services, process, and how we help businesses grow.",
+              "image": "/img/faq.png",
+              "items": [
+                {
+                  "question": "What consulting services do you offer?",
+                  "answer": "We offer business strategy, IT solutions, digital transformation, marketing consulting, and operational improvement services tailored to your business needs."
+                },
+                {
+                  "question": "How can consulting help my business?",
+                  "answer": "Consulting helps you spot gaps, set a clear plan, and improve how the team works so growth is steady and measurable."
+                },
+                {
+                  "question": "What industries do you work with?",
+                  "answer": "We work with professional services, retail, technology, and growing companies that want practical advice."
+                },
+                {
+                  "question": "How do I get started with your services?",
+                  "answer": "Share a short note about your business. We set a call, understand the goal, and outline the first step."
+                },
+                {
+                  "question": "Do you provide ongoing support?",
+                  "answer": "Yes. After the first plan we stay available for reviews, follow-ups, and support as the business grows."
+                }
+              ]
+            },
+            "testimonials": {
+              "subtitle": "Testimonial",
+              "title_line1": "What Our Customers",
+              "title_highlight": "Say About Us",
+              "description": "Our clients' success stories reflect our commitment, expertise, and dedication to delivering real results. Here's what they have to say about working with us.",
+              "image": "/img/testimonails.png",
+              "reviews": [
+                {
+                  "text": "Their strategic advice helped us streamline our operations and significantly improve our business growth.",
+                  "author": "Priya Sharma",
+                  "role": "CEO, TechSolutions",
+                  "avatar": "/team/2.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Professional, knowledgeable, and truly supportive. Their team understood our needs and delivered the best solutions.",
+                  "author": "Rahul Mehta",
+                  "role": "Founder, GrowthHub",
+                  "avatar": "/team/3.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Excellent service and outstanding results. They have been a valuable partner in our success journey.",
+                  "author": "Anjali Verma",
+                  "role": "Marketing Head, BrightMedia",
+                  "avatar": "/team/5.png",
+                  "rating": 5
+                },
+                {
+                  "text": "Clear advice and a plan we could follow. The team stayed with us through every review.",
+                  "author": "Amit Verma",
+                  "role": "Director, Northline",
+                  "avatar": "/team/6.png",
+                  "rating": 5
+                }
+              ]
+            },
+            "blogs": {
+              "subtitle": "New & Blogs",
+              "title_line1": "Our",
+              "title_highlight": "News & Blogs",
+              "description": "Stay updated with the latest insights, tips, and trends in business, technology, and digital growth from our expert team.",
+              "button": { "text": "All News & Blogs", "href": "/blog" },
+              "items": [
+                {
+                  "title": "Complete Guide Business Insurance Perfect",
+                  "date": "12 Mar, 2025",
+                  "excerpt": "Learn how business insurance protects your company, reduces risk, and ensures long-term growth.",
+                  "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80",
+                  "href": "/blog/business-finances-for-start"
+                },
+                {
+                  "title": "How Scale Your Business Without Losing Quality",
+                  "date": "18 Mar, 2025",
+                  "excerpt": "Discover proven strategies to scale your business efficiently while maintaining quality, productivity, and customer satisfaction.",
+                  "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80",
+                  "href": "/blog/scale-without-losing-quality"
+                },
+                {
+                  "title": "The Entrepreneur Guide To Work-Life Balance",
+                  "date": "22 Mar, 2025",
+                  "excerpt": "Explore practical tips and expert advice to achieve a healthy work-life balance as an entrepreneur.",
+                  "image": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=900&q=80",
+                  "href": "/blog/guide-to-steady-cashflow"
+                }
+              ]
+            },
+            "portfolio": {
+              "subtitle": "Portfolio",
+              "title_line1": "Selected Work That",
+              "title_highlight": "Moved The Numbers",
+              "description": "A few engagements where planning, brand, and sales advice changed how the business ran.",
+              "items": [
+                {
+                  "title": "Northline Growth Plan",
+                  "category": "Business Planning",
+                  "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                  "title": "Hale & Co Rebrand",
+                  "category": "Marketing & Branding",
+                  "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                  "title": "Summit Sales Reset",
+                  "category": "Sales Consulting",
+                  "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                  "title": "Harbor Cash Review",
+                  "category": "Financial Advisory",
+                  "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                  "title": "Lumen Launch Plan",
+                  "category": "Business Planning",
+                  "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1000&q=80"
+                },
+                {
+                  "title": "Oak & Pine Campaign",
+                  "category": "Marketing & Branding",
+                  "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80"
+                }
+              ]
+            },
+            "contact": {
+              "subtitle": "Contact",
+              "title_line1": "Let's Talk About",
+              "title_highlight": "Your Next Step",
+              "description": "Share a little about the business. We reply with a time to talk and a clear next step.",
+              "cards": [
+                { "icon": "MapPin", "title": "Office", "value": "123 Finance Street, New York, NY 10001" },
+                { "icon": "Phone", "title": "Phone", "value": "+1 (555) 123-4567", "href": "tel:+15551234567" },
+                { "icon": "Mail", "title": "Email", "value": "hello@fintrust.com", "href": "mailto:hello@fintrust.com" }
+              ],
+              "form": {
+                "title": "Send a Message",
+                "description": "Tell us what you want to improve. We read every note.",
+                "button_text": "Send Message",
+                "placeholders": {
+                  "name": "Your name",
+                  "email": "Email address",
+                  "phone": "Phone number",
+                  "message": "How can we help?"
+                }
+              }
+            },
+            "service_details": [
+              {
+                "slug": "business-planning",
+                "title": "Business Planning",
+                "description": "We build a working plan around revenue, costs, hiring, and the milestones you care about this year.",
+                "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+                "points": [
+                  "A one-year operating plan your team can follow",
+                  "Budget and cash view tied to real decisions",
+                  "Quarterly reviews so the plan stays current"
+                ]
+              },
+              {
+                "slug": "marketing-branding",
+                "title": "Marketing & Branding",
+                "description": "We clarify the offer, the audience, and the story so marketing spend has a job to do.",
+                "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80",
+                "points": [
+                  "Positioning that matches how you actually sell",
+                  "A simple brand system for web and sales",
+                  "Campaign priorities for the next quarter"
+                ]
+              },
+              {
+                "slug": "sales-consulting",
+                "title": "Sales Consulting",
+                "description": "We tighten how leads move from first conversation to a signed agreement.",
+                "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
+                "points": [
+                  "Pipeline stages the team agrees on",
+                  "Talk tracks for common objections",
+                  "A weekly rhythm for reviews and follow-up"
+                ]
+              },
+              {
+                "slug": "financial-advisory",
+                "title": "Financial Advisory",
+                "description": "We help owners read the numbers and choose the next investment with more confidence.",
+                "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80",
+                "points": [
+                  "Cash and margin review",
+                  "Guidance on reserves and reinvestment",
+                  "A decision brief before large commitments"
+                ]
+              }
+            ],
+            "thank_you": {
+              "title": "Thank You",
+              "title_highlight": "Message Received",
+              "description": "We have your note and will reply shortly with a time to talk.",
+              "button": { "text": "Back to Home", "href": "/" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
